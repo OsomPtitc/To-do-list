@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Список дел</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    
+    <body>
+        <div class="mainContainer">
+            <div class="container">
+                <h1 class="fieldHeader">Добавить новое дело</h1>
+
+                <div class="entryField">
+                    <p class="clarification">* Название</p>
+
+                    <input id="caseName" type="text" name="toDo" required>
+                    
+                    <p class="clarification">* Описание</p>
+                    
+                    <textarea id="caseDescription" name="description" maxlength="1000"></textarea>
+                    
+                    <button id="btn" name="simpleBtn" type="button">Добавить дело</button>
+                </div>
+            </div>
+            
+            <div id="list" class="toDoContainer">
+                <h1 class="fieldHeader">Список дел:</h1>
+
+                <ul id="toDoList">
+                </ul>
+                
+<!--
+                <ul class="toDoList">
+                    <li class="toDoName">
+                        * Описание
+                        <span class="close"></span>
+                        
+                        <div class="arrow"></div>
+                    </li>
+                    
+                    <div class="toDoDescription">
+                        <p>* Описание* Описание* Описание* Описание* Описание* Описание</p>
+                    </div>
+                </ul>
+                
+                <ul class="toDoList">
+                    <li class="toDoName">
+                        Купить лошадь
+                        <span class="close"></span>
+                        
+                        <div class="arrow"></div>
+                    </li>
+                    
+                    <div class="toDoDescription">
+                        <p>* Описание* Описание* Описание* Описание* Описание* Описание* Описание* Описание* Описание</p>
+                    </div>
+                </ul>
+                
+                <ul class="toDoList">
+                    <li class="toDoName">
+                        Купить лошадь
+                        <span class="close"></span>
+                        
+                        <div class="arrow"></div>
+                    </li>
+                    
+                    <div class="toDoDescription">
+                        <p>* Описание* Описание* Описание* Описание* Описание* Описание* Описание</p>
+                    </div>
+                </ul>
+-->
+            </div>
+            
+            
+        </div>
+    </body>
+</html>
