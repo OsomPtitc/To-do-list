@@ -1,33 +1,49 @@
 $( document ).ready(function() {
   'use strict';
   
-  $('#btn').click(function() {
+  $('#btn').click(function(){
+    $('.taskEmpty').hide();
+    
+    var value1 = $('#caseName').val();
+    
+    var value2 = $('#caseDescription').val();
+    
+    var cont1 = $('<div class="taskContainer"></div>');
+    
+    var cont2 = $('<div class="descriptionContainer"></div>');
+    
+    var list = $('<div class="list"></div>');
+    
+    $(cont1).append(value1 + '<span class="close"></span>' + '<div class="arrow"></div>');
+    
+    $(cont1).appendTo(list);
+    
+    $(cont2).append(value2);
+    
+    $(cont2).appendTo(list);
+    
+    $(list).appendTo('article');
+    
+    $('#caseName').val(" ");
+    
+    $('#caseDescription').val(" ");
+    
+    $('.close').click(function(){
+      $(this).parent('.taskContainer').parent('.list').remove();
       
-    var newTaskElement = $('#caseName').val();
-    if (newTaskElement.length > 0) {
-        $('#toDoList').append("<li>" + newTaskElement + "</li>")
-          .css ({
-            'font-size': '16px;', 
-            'position': 'relative;', 
-            'padding': '18px 20px;', 
-            'list-style-type': 'none'
-        });
-        $('#caseName').val(" ");
-    var newDescriptionElement = $('#caseDescription').val();
-    if (newDescriptionElement.length > 0) {
-        $('toDoList').append("<div>" + "<p>" + newDescriptionElement + "</p>" + "</div>")
-          .css ({
-            'width': '470px;',
-            'text-align': 'left;',
-            'padding': '10px 20px;',
-            'background-color': '#fff;',
-            'color': '#8993ad;',
-            'font-size': '14px;',
-            'border-top': '1px #f5f5f5 solid;'
-        });
-        $('#caseDescription').val(" ");
-    }
-    }
+      if ($('.toDoContainer').children('div').length){
+        
+      }
+      else {
+        $('.taskEmpty').show();
+      }
+    });
+    
+    $('.arrow').click(function(xxx){
+      $(this).toggleClass('active').parent('.taskContainer').parent('.list').children('.descriptionContainer').slideToggle(800);
+      
+    xxx.stopImmediatePropagation();
+    });
   });
 });
 
